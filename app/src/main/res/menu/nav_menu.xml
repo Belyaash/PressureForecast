@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/HomeFragment"
+        android:icon="@mipmap/home_ico"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/ChartFragment"
+        android:icon="@mipmap/graph_ico"
+        android:title="@string/chart" />
+    <item
+        android:id="@+id/PredictFragment"
+        android:icon="@mipmap/predict_ico"
+        android:title="@string/predict" />
+</menu>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="ViewModels.AddNoteViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F0F0F3"
+        android:maxHeight="230dp">
+
+        <TextView
+            android:id="@+id/sys"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="16dp"
+            android:text="SYS"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/dia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DIA"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/pul"
+            app:layout_constraintStart_toEndOf="@+id/sys"
+            app:layout_constraintTop_toTopOf="@+id/sys" />
+
+        <TextView
+            android:id="@+id/pul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:text="PUL"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/sys" />
+
+        <EditText
+            android:id="@+id/upper_pressure"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/style_round"
+            android:ems="10"
+            android:hint="120"
+            android:inputType="number"
+            android:maxLength="3"
+            android:text="@={viewModel.sysText}"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/sys"
+            app:layout_constraintStart_toStartOf="@+id/sys"
+            app:layout_constraintTop_toBottomOf="@+id/sys" />
+
+        <EditText
+            android:id="@+id/lower_pressure"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/style_round"
+            android:ems="10"
+            android:hint="80"
+            android:inputType="number"
+            android:maxLength="3"
+            android:text="@={viewModel.diaText}"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/dia"
+            app:layout_constraintStart_toStartOf="@+id/dia"
+            app:layout_constraintTop_toBottomOf="@+id/dia" />
+
+        <EditText
+            android:id="@+id/current_pulse"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/style_round"
+            android:ems="10"
+            android:hint="70"
+            android:inputType="number"
+            android:maxLength="3"
+            android:text="@={viewModel.pulText}"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/pul"
+            app:layout_constraintStart_toStartOf="@+id/pul"
+            app:layout_constraintTop_toBottomOf="@+id/pul" />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="16dp"
+            android:text="@string/save"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/upper"
+            app:layout_constraintEnd_toEndOf="@+id/upper_pressure"
+            app:layout_constraintStart_toStartOf="@+id/upper_pressure"
+            app:layout_constraintTop_toBottomOf="@+id/upper_pressure" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/lower"
+            app:layout_constraintEnd_toEndOf="@+id/lower_pressure"
+            app:layout_constraintStart_toStartOf="@+id/lower_pressure"
+            app:layout_constraintTop_toBottomOf="@+id/lower_pressure" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="@string/pulse"
+            app:layout_constraintEnd_toEndOf="@+id/current_pulse"
+            app:layout_constraintStart_toStartOf="@+id/current_pulse"
+            app:layout_constraintTop_toBottomOf="@+id/current_pulse" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
